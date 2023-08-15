@@ -4,6 +4,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #1e1e1e;
     color: #fff;
+    overflow: hidden;
 }
 
 .container {
@@ -14,7 +15,29 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
+
+.live-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(30, 30, 30, 0.9), rgba(30, 30, 30, 0.6));
+    animation: liveBackground 10s ease infinite;
+}
+
+@keyframes liveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
 
 header {
     text-align: center;
